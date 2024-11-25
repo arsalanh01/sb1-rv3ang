@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('https://www.aramco.com/assets/fonts/TheSansArabic-Plain.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'TheSans';
+  src: url('https://www.aramco.com/assets/fonts/TheSansArabic-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+body {
+  font-family: 'TheSans', sans-serif;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination {
+  bottom: 4rem !important;
+  left: 4rem !important;
+  width: auto !important;
+  display: flex;
+  gap: 1rem;
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  background: transparent !important;
+  opacity: 1 !important;
+  width: 160px !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0;
+  text-align: left;
+  margin: 0 !important;
+}
+
+.swiper-pagination-bullet::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-pagination-bullet::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: white;
+  transition: width 5s linear;
+  z-index: 1;
+}
+
+.swiper-pagination-bullet-active::before {
+  width: 100%;
+}
+
+.swiper-pagination-bullet span {
+  color: white;
+  font-size: 0.875rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.swiper-pagination-bullet-active span {
+  opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  &::after {
+    display: none;
+  }
+}
+
+/* Services Slider Styles */
+.services-slider {
+  overflow: visible;
+  padding: 0.5rem;
+  margin: -0.5rem;
+}
+
+.services-slider .swiper-slide {
+  height: auto;
+  width: 300px !important;
+}
+
+.services-prev,
+.services-next {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.services-slider:hover .services-prev,
+.services-slider:hover .services-next {
+  opacity: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
